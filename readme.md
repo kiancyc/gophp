@@ -1,8 +1,7 @@
 # phpcgi
 
-usage:
+usage(on windows):
 
-`
 
 	import (
 	    "net/http"
@@ -11,9 +10,16 @@ usage:
 
 	func main() {    
 	    http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
-	    	gophp.Cgi(w, r, "C:/php/php-cgi", "E:/goproject/src/bamboo/api/articles/get.php")
+	    	gophp.Cgi(w, r, "C:/php/php-cgi", "E:/php/test/php")
 	    })
 	    http.ListenAndServe(":8080", nil)
 	}
 	
-`
+php:
+
+	<?php
+	echo "Hello, {$_GET['name']}";
+	
+visit: http://localhost:8080/?name=John
+
+	Hello, John
