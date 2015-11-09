@@ -1,4 +1,4 @@
-# phpcgi
+# gophp
 
 usage(on windows):
 
