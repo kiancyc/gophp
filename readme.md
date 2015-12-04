@@ -10,12 +10,12 @@ usage(on windows):
 
 	func main() {    
 	    http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
-	    	gophp.Cgi(w, r, "C:/php/php-cgi", "E:/php/test/php")
+	    	gophp.Cgi(w, r, "C:/php/php-cgi", "E:/php/test.php")
 	    })
 	    http.ListenAndServe(":8080", nil)
 	}
 	
-php:
+test.php:
 
 	<?php
 	echo "Hello, {$_GET['name']}";
